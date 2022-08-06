@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js";
+import { sandboxApi } from "../Services/AxiosService.js";
 import { todoService } from "../Services/TodoService.js";
 import { Pop } from "../Utils/Pop.js";
 
@@ -19,6 +20,41 @@ export class TodoController{
             await todoService.getTodos()
         } catch (error) {
             console.error('[getTodos]', error)
+            Pop.error(error)
+        }
+    }
+
+    async toggleTodo(todoId){
+        try {
+            await sandboxApi.toggleTodo(todoId)
+        } catch (error) {
+            console.error('[toggleTodo]', error)
+            Pop.error(error)
+        }
+    }
+
+    async addTodo(){
+        try {
+            window.event.preventDefault()
+            let form = window.event.target
+            let newTodo = {
+                description: form.description.value
+            }
+            await todoService.addTodo(newTodo)
+            form.reset()
+        } catch (error) {
+            console.error('[AddTodo]', error)
+            Pop.error(error)
+        }
+    }
+
+    async deleteTodo(){
+        try {
+            const yes = await Pop.confirm('Delete Todo')
+            if(!yes){ return }
+            await todoService.deleteTodo(id)
+        } catch (error) {
+            console.error('[deleteTodo]', error)
             Pop.error(error)
         }
     }

@@ -38,7 +38,18 @@
         <div class="col-4 card">
           <div id="todos" class="card-body">
             <!-- todos STUB -->
-            <p>todo description</p>
+          </div>
+          <div>
+            <form onsubmit="app.todoController.addTodo()">
+              <div class="row">
+                <div class="col-6">
+                  <input type="text" class="form-control" placeholder="Todo" id="description" name="description">
+                </div>
+                <div class="col-6 text-center">
+                <button class="btn btn-success">Add Todo</button>
+              </div>
+              </div>
+            </form>
           </div>
         </div>
       
