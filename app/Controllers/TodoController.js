@@ -3,12 +3,17 @@ import { sandboxApi } from "../Services/AxiosService.js";
 import { todoService } from "../Services/TodoService.js";
 import { Pop } from "../Utils/Pop.js";
 
-// might not work idk yet, remember TODO
 function _drawTodos(){
     let template = ''
     ProxyState.todos.forEach(t => template += t.TodoTemplate)
     document.getElementById('todos').innerHTML = template
 }
+
+// function _drawCompleted(){
+    // number = 0
+    // ProxyState.todos.filter(t => t.completed == true)
+//     document.getElementById('completes').innerText = 0
+// }
 
 export class TodoController{
     constructor(){
@@ -58,4 +63,5 @@ export class TodoController{
             Pop.error(error)
         }
     }
+
 }
