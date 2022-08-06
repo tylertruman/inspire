@@ -8,6 +8,5 @@ export class ClockController{
     constructor(){
         _drawClock()
         setInterval(_drawClock, 1000)
-
     }
 }

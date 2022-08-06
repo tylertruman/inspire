@@ -1,1 +1,5 @@
 /* BASIC STYLES HERE */
+body {
+    background-position: center;
+    background-size: cover;
+}

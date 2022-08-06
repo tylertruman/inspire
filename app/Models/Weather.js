@@ -10,9 +10,13 @@ export class Weather {
     }
 
     get WeatherTemplate(){
-        return `
-        <p>F: ${this.tempF.toFixed()}</p>
-        <p>C: ${this.tempC.toFixed()}</p> 
-        <p>City: ${this.name}</p> `
+        return ` 
+        <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="temperatureSwitch" onchange="">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+        <p>C ${this.tempC.toFixed()}</p>
+        <p>F ${this.tempF.toFixed()}</p>
+        <p>City: ${this.name}</p>
+        </div>`
     }
 }
