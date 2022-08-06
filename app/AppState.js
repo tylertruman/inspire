@@ -3,11 +3,11 @@ import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
   /** @type {import('./Models/Image').Image} */
-  image = {}
+  image = null
   /** @type {import('./Models/Weather').Weather} */
-  weather = {}
+  weather = null
   /** @type {import('./Models/Quote').Quote} */
-  quote = {}
+  quote = null
   /** @type {import('./Models/Todo').Todo[]} */
   todos = []
 

@@ -21,4 +21,8 @@ export class WeatherController {
             Pop.error(error)
         }
     }
+    toggleWeather(){
+        weatherService.toggleWeather()
+        console.log('toggle weather yo')
+    }
 }

@@ -18,10 +18,11 @@ class TodoService{
         }
         todo.completed = !todo.completed
         let todoIndex = ProxyState.todos.indexOf(todo)
-        let res = await sandboxApi.put(`/tyler/todos/${todoId}`, todo)
+        let res = await sandboxApi.put(`/tyler/todos/${todo.id}`, todo)
         let updatedTodo = new Todo(res.data)
         ProxyState.todos.splice(todoIndex, 1, updatedTodo)
         ProxyState.todos = ProxyState.todos
+        console.log('toggletodo', todoId)
     }
 
     async deleteTodo(id){
@@ -29,8 +30,8 @@ class TodoService{
         ProxyState.todos = ProxyState.todos.filter(t => t.id != id)
     }
 
-    async addTodo(){
-        let res = await sandboxApi.post('/tyler/todos')
+    async addTodo(todoData){
+        let res = await sandboxApi.post('/tyler/todos', todoData)
         let newTodo = new Todo(res.data)
         ProxyState.todos = [...ProxyState.todos, newTodo]
         console.log(ProxyState.todos, 'ADDING TODO')

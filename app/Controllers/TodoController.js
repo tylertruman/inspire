@@ -26,7 +26,7 @@ export class TodoController{
 
     async toggleTodo(todoId){
         try {
-            await sandboxApi.toggleTodo(todoId)
+            await todoService.toggleTodo(todoId)
         } catch (error) {
             console.error('[toggleTodo]', error)
             Pop.error(error)
@@ -37,10 +37,10 @@ export class TodoController{
         try {
             window.event.preventDefault()
             let form = window.event.target
-            let newTodo = {
+            let todoData = {
                 description: form.description.value
             }
-            await todoService.addTodo(newTodo)
+            await todoService.addTodo(todoData)
             form.reset()
         } catch (error) {
             console.error('[AddTodo]', error)
@@ -48,7 +48,7 @@ export class TodoController{
         }
     }
 
-    async deleteTodo(){
+    async deleteTodo(id){
         try {
             const yes = await Pop.confirm('Delete Todo')
             if(!yes){ return }

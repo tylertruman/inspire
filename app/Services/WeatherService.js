@@ -10,6 +10,10 @@ class WeatherService {
         // ProxyState.weather = res.data.results.map(w => new Weather(w))
         ProxyState.weather = new Weather(res.data)
     }
+    toggleWeather(){
+        ProxyState.weather.toggle = !ProxyState.weather.toggle
+        ProxyState.weather = ProxyState.weather
+    }
 }
 
 export const weatherService = new WeatherService()
