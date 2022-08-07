@@ -3,3 +3,7 @@ body {
     background-position: center;
     background-size: cover;
 }
+
+.bg-card {
+    background-color: rgba(216, 216, 216, 0.637)
+}

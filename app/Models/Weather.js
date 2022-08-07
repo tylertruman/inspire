@@ -13,14 +13,13 @@ export class Weather {
     get WeatherTemplate(){
         return ` 
         <div class="form-check form-switch">
-        <input id="weatherInput" class="form-check-input" type="checkbox" role="switch" onchange="app.weatherController.toggleWeather()">
-        <label class="form-check-label" for="flexSwitchCheckDefault">${this.toggle ? 'C:' : 'F:'}</label>
-        ${this.toggle ? this.tempC.toFixed() : this.tempF.toFixed()} 
+        <input id="weatherInput" ${this.toggle ? 'checked' : ''} class="form-check-input" type="checkbox" role="switch" onchange="app.weatherController.toggleWeather()">
+        <label class="form-check-label" for="flexSwitchCheckDefault">${this.toggle ? 'F:' : 'C:'}</label>
+        ${this.toggle ? this.tempF.toFixed() : this.tempC.toFixed()} 
         
         
         <p>City: ${this.name}</p>
         </div>`
-    }
-    
+    } 
 }
 

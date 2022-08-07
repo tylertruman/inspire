@@ -30,44 +30,36 @@
     <div class="container-fluid">
       <section class="row mt-5 pt-5">
         <div class="col-12 mt-5 pt-5">
-          <h1 id="clock" class="text-center text-light"></h1>
+          <h1 id="clock" class="text-center text-light mb-5"></h1>
         </div>
       </section>
-      <section class="row">
-        
-        <div class="col-4 card">
+      <section class="row mt-5">
+        <div class="col-3 offset-8 card elevation-1 bg-card">
           <div id="" class="card-body">
             <h5 class="text-center">Todo List:</h5>
             <p id="completes" class="text-center">Completed: </p>
             <div id="todos" class="mb-0 text-center">
               <!-- todos STUB -->
-
             </div>
-              
           </div>
           <div>
             <form onsubmit="app.todoController.addTodo()">
               <div class="row">
-                <div class="col-6">
+                <div class="col-7 offset-1">
                   <input type="text" class="form-control" placeholder="Todo" id="description" name="description">
                 </div>
-                <div class="col-6 text-center">
+                <div class="col-4 text-start mb-3">
                 <button class="btn btn-success">Add Todo</button>
               </div>
               </div>
             </form>
           </div>
         </div>
-      
       </section>
     </div>
   </main>
   <footer id="quote" class="text-light">
     <!-- Quote STUB -->
-    <!-- <div class="text-center no-select">
-      <p><small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ducimus aliquid cum voluptatum laudantium. Saepe?</small></p>
-      <h5 class="on-hover">AUTHOR</h5>
-    </div> -->
   </footer>
 
 <!-- Axios Script -->
