@@ -7,13 +7,11 @@ function _drawTodos(){
     let template = ''
     ProxyState.todos.forEach(t => template += t.TodoTemplate)
     document.getElementById('todos').innerHTML = template
+    let completes = 0
+    let totalTodos = ProxyState.todos.length
+    ProxyState.todos.filter(t => completes += t.completed).length
+    document.getElementById('completes').innerText = completes + ' / ' + totalTodos
 }
-
-// function _drawCompleted(){
-    // number = 0
-    // ProxyState.todos.filter(t => t.completed == true)
-//     document.getElementById('completes').innerText = 0
-// }
 
 export class TodoController{
     constructor(){
