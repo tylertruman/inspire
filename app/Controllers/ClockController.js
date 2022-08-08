@@ -1,8 +1,12 @@
 function _drawClock(){
     let today = new Date();
+    const months = ["Jan", "Feb", "Mar", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let month = months[today.getMonth()]
+    let date = today.getDate()
     let hours = today.getHours()
     let minutes = today.getMinutes()
     let ampm = "AM"
+    
     if(minutes < 10){
         minutes = "0" + minutes;
     }
@@ -13,7 +17,7 @@ function _drawClock(){
         hours -= 12;
         ampm = "PM";
     }
-    document.getElementById('clock').innerText = hours + ':' + minutes + ' ' + ampm
+    document.getElementById('clock').innerHTML = `${hours}<span>:</span>${minutes} <span> </span> ${ampm} <br> ${month} ${date}`
 }
 
 export class ClockController{
