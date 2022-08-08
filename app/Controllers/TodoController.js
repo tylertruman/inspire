@@ -18,6 +18,7 @@ export class TodoController{
         ProxyState.on('todos', _drawTodos)
         this.getTodos()
     }
+    
     async getTodos(){
         try {
             await todoService.getTodos()
