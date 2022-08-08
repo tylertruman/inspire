@@ -6,7 +6,6 @@ function _drawClock(){
     let hours = today.getHours()
     let minutes = today.getMinutes()
     let ampm = "AM"
-    
     if(minutes < 10){
         minutes = "0" + minutes;
     }
@@ -17,7 +16,7 @@ function _drawClock(){
         hours -= 12;
         ampm = "PM";
     }
-    document.getElementById('clock').innerHTML = `${hours}<span>:</span>${minutes} <span> </span> ${ampm} <br> ${month} ${date}`
+    document.getElementById('clock').innerHTML = `${hours}<span>:</span>${minutes} <span> </span> ${ampm} <br><h5> ${month} ${date}</h5>`
 }
 
 export class ClockController{

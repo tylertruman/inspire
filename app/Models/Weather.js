@@ -1,5 +1,3 @@
-
-
 export class Weather {
     constructor(data){
         this.tempF = data.main.temp

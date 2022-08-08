@@ -13,6 +13,7 @@ export class QuotesController{
         ProxyState.on('quote', _drawQuote)
         this.getQuote()
     }
+    
     async getQuote(){
         try {
             await quotesService.getQuote()

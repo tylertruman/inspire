@@ -10,6 +10,5 @@ export class Quote{
       <p><small>${this.quote}</small></p>
       <h5 class="on-hover">${this.author}</h5>
     </div>`
-        
     }
 }

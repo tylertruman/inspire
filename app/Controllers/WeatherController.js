@@ -23,6 +23,5 @@ export class WeatherController {
     }
     toggleWeather(){
         weatherService.toggleWeather()
-        console.log('toggle weather yo')
     }
 }
