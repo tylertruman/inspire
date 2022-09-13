@@ -11,7 +11,7 @@ export class Todo{
     get TodoTemplate(){
         return `
         <input type="checkbox" ${this.completed ? 'checked' : ''} onchange="app.todoController.toggleTodo('${this.id}')" >
-          <span>${this.description}</span>
+          <span class="text-light">${this.description}</span>
           <button class="btn text-danger selectable" onclick="app.todoController.deleteTodo('${this.id}')">
             <i class="p-0">X</i>
           </button>
